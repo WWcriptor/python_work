@@ -6,6 +6,7 @@ print(a+'끝')
 b = "{0:>5d}".format(200)
 print(b)
 
+#가운데 정렬
 c = "{0:^5d}" .format(200)
 print(c)
 
