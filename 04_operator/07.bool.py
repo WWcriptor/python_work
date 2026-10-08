@@ -26,3 +26,7 @@ b = None
 
 print(bool(a))
 print(bool(b))
+
+name = input("이름 입력 : ")
+print(bool(name))
+print(f"name = {name}")
