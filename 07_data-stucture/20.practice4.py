@@ -12,5 +12,7 @@ for i in range(turn):
     lotto = set()
     while len(lotto) != 6:
         lotto.add(random.randint(1,45))
-    print(lotto)   
+
+    lotto_list = sorted(lotto)
+    print(lotto_list)   
 
