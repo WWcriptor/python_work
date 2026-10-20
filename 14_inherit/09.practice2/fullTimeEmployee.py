@@ -6,4 +6,4 @@ class FullTimeEmployee(Employee):
         self.__monthly_saraly = monthly_saraly
 
     def calculate_saraly(self):
-        print(f"월급은 {self.__monthly_saraly}원입니다")
+        print(f"{self.getName()}의 월급은 {self.__monthly_saraly}원입니다")
