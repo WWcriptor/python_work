@@ -9,7 +9,7 @@
     - abc : Abstract Base Class(추상 기본 클래스)의 약자
             파이썬에서 추상 클래스를 정의할 때 사용하는 내장모듈
     - ABC : abc 모듈에 들어있는 클래스
-    - abstractmethod : 추상 메소드 위에 @bstractmethod 어노트에션을 달아야 한다.
+    - abstractmethod : 추상 메소드 위에 @bstractmethod 어노테이션을 달아야 한다.
     - 추상크래스는 import를 반드시 해야 한다.
         from abc import ABC, abstractmethod
 
@@ -25,8 +25,8 @@ kim = Programmer("김수철", 31, "python")
 kim.introduce()
 kim.info()
 
-# park = Acter("박수철", 28, "오디세이")
-# park.introduce()
+park = Acter("박수철", 28, "오디세이")
+park.introduce()
 
 # lee = Famer("이수철", 29, "당근")
 # lee.introduce()

@@ -3,28 +3,37 @@ from abc import ABC, abstractmethod
 
 class Person(ABC):
     def __init__(self, name, age, job = None):
-        self.name = name
+        self.__name = name
         self.__age = age
-        self.job = job
+        self.__job = job
 
-    def hello(self):
-        print(f"Hello, I'm {self.name}")
+    # getter 메소드 ---- 조회용
 
-    def updateAge(self, age):
+    def getName(self):
+        return self.__name
+
+    def getAge(self):
+            return self.__age
+
+    def getJob(self):
+        return self.__job
+
+
+    # setter 메소드 ---- 수정용
+
+    def setAge(self, age):
         if age < 0:
             print("나이는 음수일 수 없습니다.")
         else:
             self.__age = age
-            print(f"현재 나이는 {self.__age}세 입니다")
+            print(f"[{self.__name}]의 나이가 {self.__age}세로 업데이트 되었습니다.")
 
-    def getAge(self):
-        return self.__age
+    def setJob(self, job):
+         self.__job = job
+
+    def hello(self):
+        print(f"Hello I'm {self.__name}.")
 
     @abstractmethod
     def introduce(self):
         pass
-
-    # 추상 메서드는 자식 클래스에서 오버라이딩 했는가만 검사. 실행 가능함
-    # @abstractmethod
-    # def info(self):
-    #     print("이 메서드는 자기소개 입니다") #but. 잘 사용되지 않음(주로 pass)
