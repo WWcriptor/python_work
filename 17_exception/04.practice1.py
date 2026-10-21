@@ -14,8 +14,8 @@
 """
 
 class ReservationError(Exception):
-    def __init__(self,seet):
-        super().__init__(f"{seet}좌석은 이미 예약된 좌석입니다.")
+    def __init__(self,seat):
+        super().__init__(f"{seat}좌석은 이미 예약된 좌석입니다.")
 
 class NoneSeatError(Exception):
     def __init__(self):
@@ -26,13 +26,13 @@ class NotReserveError(Exception):
         super().__init__("예약이 확인되지 않습니다.")
 
 class Movie:
-    def __init__(self, title, seets):
+    def __init__(self, title, seats):
         self.title = title
-        self.seets = seets
+        self.seats = seats
         self.reserve=[]
 
     def reservation(self, num):
-        if num > self.seets or num <= 0:
+        if num > self.seats or num <= 0:
             raise NoneSeatError()
         if num in self.reserve:
             raise ReservationError(num)
@@ -47,14 +47,15 @@ class Movie:
 
     def show_reservation(self):
         print(f"영화 : {self.title}")
-        print(f"예약된 좌석 : {self.reserve}")
+        print(f"예약된 좌석 : {sorted(self.reserve)}")
         
 
 try:
     parasite = Movie("기생수", 50)
     parasite.reservation(3)
-    # parasite.cancel(3)
-    # parasite.cancel(3)
+    parasite.cancel(3)
+    parasite.reservation(15)
+    parasite.reservation(30)
     parasite.reservation(60)
 except (NoneSeatError, ReservationError,NotReserveError) as e:
     print(e)
